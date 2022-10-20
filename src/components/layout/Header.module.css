@@ -1,0 +1,32 @@
+.header{
+    text-align: center;
+    background-color: black;
+    color: white;
+    padding: 0.5rem;
+    margin: auto;
+    height: 2rem;
+}
+.home{
+   padding-left: 5rem;
+   font-size: 17px;
+}
+.store{
+    padding-left:5rem;
+    font-size: 17px;
+}
+.about{
+    padding-left: 5rem;
+    font-size: 17px;
+}
+.main-header{
+    background-color:dimgray;
+    text-align: center;
+    color: white;
+    height: 12rem;
+    padding: auto;
+    font-size: 90px;
+    font-weight: bold;
+    padding-top: 1rem;
+    margin-top: 3px;
+    font-style: normal;
+}
