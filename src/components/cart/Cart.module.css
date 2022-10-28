@@ -40,7 +40,7 @@
 .image{
   height: 70px;
   width:70px;
-  margin-top: 2rem;
+  margin-top: 1rem;
   border-radius: 10px;
 }
 .title{
@@ -50,7 +50,7 @@
   padding-left: 100px;
 }
 .quantity{
-  padding-left: 70px;
+  margin-left: 70px;
 }
 .purbutton{
   margin-top: 20px;
@@ -75,14 +75,19 @@
   margin-left: 20px;
 }
 .total{
-  margin-left: 80%;
+  margin-left: 60%;
   font-weight: bold;
   font-size: 20px;
 }
 .main{
-  width:30%;
+  width:auto;
   height:50%;
 } 
+.cart{
+  max-height: 500px;
+  overflow: auto;
+} 
+
 
 
 

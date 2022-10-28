@@ -1,0 +1,37 @@
+.heading{
+    text-align: center;
+    color: black;
+    font-weight: bold;
+    font-size: 30px;
+    font-style: normal;
+}
+.home{
+   margin-left: 200px;
+   margin-right: 200px;
+}
+.lists{
+    
+    margin-left: 200px;
+}
+.button{
+    background-color: skyblue;
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+    border-radius: 5px;
+    height: 30px;
+    width: 150px;
+    margin-left:50px;
+    margin-bottom: 10px;
+    border-color: skyblue; 
+}
+.sec{
+    margin-left: 50px;
+}
+.third{
+    margin-left: 100px;
+}
+.particular{
+    margin-bottom: 20px;
+    border-bottom: 1px solid grey;
+}

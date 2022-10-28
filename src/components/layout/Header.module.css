@@ -9,14 +9,17 @@
 .home{
    padding-left: 5rem;
    font-size: 17px;
+   color: white;
 }
 .store{
     padding-left:5rem;
     font-size: 17px;
+    color: white;
 }
 .about{
     padding-left: 5rem;
     font-size: 17px;
+    color: white;
 }
 .main-header{
     background-color:dimgray;
