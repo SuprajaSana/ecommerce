@@ -8,6 +8,7 @@ import Cart from './components/cart/Cart';
 import CartProvider from './store/CartProvider';
 import Home from './pages/Home';
 import About from './pages/About';
+import Cartstorebutton from './components/layout/Cartstorebutton';
 
 
 function App() {
@@ -24,20 +25,21 @@ function App() {
 
   return (
     <CartProvider>
-      {cartIsShown && <Cart onClose={cartHideHandler}></Cart>}
-     <Header onShow={cartShownHandler}></Header> 
+      {cartIsShown && <Cart onClose={cartHideHandler}></Cart>} 
      <main>
       <Route path="/home">
         <Home></Home>
       </Route>
+      <Route path="/store">
+      <Header onShow={cartShownHandler}></Header> 
+        <Music></Music>
+        <Cartstorebutton onClick={cartShownHandler}></Cartstorebutton>
+        <Footer></Footer>
+      </Route>
       <Route path="/about">
         <About></About>
       </Route>
-      <Route path="/store">
-        <Music></Music>
-      </Route>
-      </main>   
-     <Footer></Footer>
+     </main>
     </CartProvider>
   );
 }

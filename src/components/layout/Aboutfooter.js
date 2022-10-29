@@ -1,8 +1,8 @@
 import { Fragment } from "react";
 
-import classes from "./Footer.module.css";
+import classes from "./Aboutfooter.module.css";
 
-const Footer = (props) => {
+const Aboutfooter = (props) => {
   return (
     <Fragment>
       <div className={classes.footer}>
@@ -50,4 +50,4 @@ const Footer = (props) => {
   );
 };
 
-export default Footer;
+export default Aboutfooter;

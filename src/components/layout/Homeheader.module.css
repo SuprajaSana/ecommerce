@@ -28,29 +28,30 @@
     background-color:dimgray;
     text-align: center;
     color: white;
-    height: 12rem;
+    height: 22rem;
     padding: auto;
+}
+.heading{
     font-size: 90px;
     font-weight: bold;
-    padding-top: 1rem;
+    padding-top: 0.5rem;
     margin-top: 3px;
     font-style: normal;
 }
-/*.buttonplay{
-    border-style: solid;
-    border-color: #202020;
-    border-width: 15px 0px 15px 30px;
-    border-color: white white white  lightskyblue;
-    box-sizing: border-box;
-    width: 20px;
-    height: 20px;
+.secheading{
+    font-size: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-top: 1px solid lightskyblue;
+    border-bottom: 1px solid lightskyblue;
+    border-left: 1px solid lightskyblue;
+    border-right: 1px solid lightskyblue;
 }
-.circle{
-  border-radius: 50%;
-  width: 36px;
-  height: 36px;
-  padding: 15px;
-  background: #fff;
-  border: 3px solid  lightskyblue;
-  color: #000;  
-} */
+.icon{
+    position: absolute;
+    top: 300px;
+    left: 725px;
+    color: rgb(157, 195, 218);  
+}

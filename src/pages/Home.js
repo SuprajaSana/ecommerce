@@ -1,8 +1,12 @@
 import classes from './Home.module.css';
+import Homeheader from '../components/layout/Homeheader';
+import Homefooter from '../components/layout/Homefooter';
 
 const Home=()=>
 {
     return(
+        <div>
+            <Homeheader></Homeheader>
     <div className={classes.home}>
      <h1 className={classes.heading}>TOURS</h1>
      <div className={classes.lists}>
@@ -43,6 +47,8 @@ const Home=()=>
             <button className={classes.button}>BUY TICKETS</button>
         </div>
      </div>
+     </div>
+     <Homefooter></Homefooter>
      </div>
     )
 }

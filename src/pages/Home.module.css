@@ -4,17 +4,17 @@
     font-weight: bold;
     font-size: 30px;
     font-style: normal;
+    margin-bottom: 50px;
 }
 .home{
    margin-left: 200px;
    margin-right: 200px;
 }
-.lists{
-    
+.lists{    
     margin-left: 200px;
 }
 .button{
-    background-color: skyblue;
+    background-color: lightskyblue;
     color: white;
     font-weight: bold;
     font-size: 15px;
@@ -22,16 +22,17 @@
     height: 30px;
     width: 150px;
     margin-left:50px;
-    margin-bottom: 10px;
     border-color: skyblue; 
+    position: absolute;
+    right: 300px;
 }
 .sec{
     margin-left: 50px;
 }
 .third{
-    margin-left: 100px;
+    position: absolute;
+    left: 700px;
 }
 .particular{
-    margin-bottom: 20px;
-    border-bottom: 1px solid grey;
+    margin-bottom: 40px;
 }

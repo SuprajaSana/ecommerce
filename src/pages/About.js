@@ -1,7 +1,12 @@
 import classes from "./About.module.css";
+import Aboutheader from "../components/layout/Aboutheader";
+import Aboutfooter from "../components/layout/Aboutfooter";
+
 
 const About = () => {
   return (
+    <div>
+        <Aboutheader></Aboutheader>
     <div className={classes.about}>
       <h3 className={classes.heading}>ABOUT</h3>
       <div className={classes.paraimage}>
@@ -34,6 +39,8 @@ const About = () => {
           him? Him whom something large cisterns.
         </p>
       </div>
+    </div>
+    <Aboutfooter></Aboutfooter>
     </div>
   );
 };

@@ -45,7 +45,7 @@ const MusicItems = (props) => {
         <span className={classes.title}>{item.title}</span>{" "}
         <img className={classes.items} src={item.imageUrl} alt=""></img>{" "}
         <span className={classes.price}>${item.price}</span>{" "}
-        <button className={classes.button} onClick={addHandler.bind(null,item)}>
+        <button className={classes.button} onClick={addHandler.bind(null,item)} to="/cart">
           Add To Cart
         </button>
       </div>
