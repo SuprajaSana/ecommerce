@@ -9,7 +9,7 @@ import CartProvider from './store/CartProvider';
 import Home from './pages/Home';
 import About from './pages/About';
 import Cartstorebutton from './components/layout/Cartstorebutton';
-
+import Contact from './pages/Contact';
 
 function App() {
   
@@ -38,6 +38,9 @@ function App() {
       </Route>
       <Route path="/about">
         <About></About>
+      </Route>
+      <Route path="/contact">
+        <Contact></Contact>
       </Route>
      </main>
     </CartProvider>

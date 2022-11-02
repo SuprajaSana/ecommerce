@@ -13,6 +13,7 @@ const Aboutheader=(props)=>
         <NavLink className={classes.home} to="/home">HOME</NavLink>
         <NavLink className={classes.store} to="/store">STORE</NavLink>
         <NavLink className={classes.about} to="/about">ABOUT</NavLink>
+        <NavLink className={classes.about} to="/contact">CONTACT US</NavLink>
         </nav>
         </div>
         <h1 className={classes['main-header']}>The Generics</h1>

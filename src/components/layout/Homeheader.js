@@ -17,6 +17,9 @@ const Homeheader = (props) => {
           <NavLink className={classes.about} to="/about">
             ABOUT
           </NavLink>
+          <NavLink className={classes.about} to="/contact">
+            CONTACT US
+          </NavLink>
         </nav>
       </div>
       <div className={classes["main-header"]}>
