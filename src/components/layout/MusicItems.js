@@ -2,6 +2,7 @@ import { Fragment, useContext } from "react";
 
 import classes from "./MusicItems.module.css";
 import CartContext from "../../store/Cart-Context";
+import { Link } from "react-router-dom";
 
 const productsArr = [
   {
@@ -43,7 +44,9 @@ const MusicItems = (props) => {
     return (
       <div onSubmit={submitHandler}> 
         <span className={classes.title}>{item.title}</span>{" "}
-        <img className={classes.items} src={item.imageUrl} alt=""></img>{" "}
+        <div className={classes.extra}>
+        <Link to={`/product/${item.id}`}><img className={classes.items} src={item.imageUrl} alt=""></img></Link>{" "}
+        </div>
         <span className={classes.price}>${item.price}</span>{" "}
         <button className={classes.button} onClick={addHandler.bind(null,item)} to="/cart">
           Add To Cart

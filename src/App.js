@@ -10,6 +10,7 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Cartstorebutton from './components/layout/Cartstorebutton';
 import Contact from './pages/Contact';
+import Products from './pages/Products';
 
 function App() {
   
@@ -41,6 +42,9 @@ function App() {
       </Route>
       <Route path="/contact">
         <Contact></Contact>
+      </Route>
+      <Route path="/product/:productId">
+        <Products></Products>
       </Route>
      </main>
     </CartProvider>
