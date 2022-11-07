@@ -78,6 +78,7 @@ const cartContext={
   addItems:addItemHandler,
   removeItems:removeItemHandler,
 }
+
   return(
     <CartContext.Provider value={cartContext}>
         {props.children}

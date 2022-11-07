@@ -33,7 +33,13 @@ const Cart = (props) => {
   const purchaseChangeHandler=()=>
   {
     setPurchase(true)
-    alert('Thanks for Purchase')
+    if(cartCtx.items.length > 0)
+    {
+        alert('Thanks for purchase')
+    }
+    else{
+        alert('Add items to cart to purchase')
+    }
   }
 
   const removeHandler = (id) => {

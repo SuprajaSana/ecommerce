@@ -10,7 +10,6 @@
     margin-bottom: 10px;
     transition: transform 0.5s;
     display: block;
-    overflow: hidden;
 }
 .title{
     padding-left:300px;
@@ -36,10 +35,5 @@
     display: flex;
     flex-wrap: wrap;
 }
-.extra{
-    overflow: hidden;
-}
-.extra:hover .items{
-   transform: scale(1.2);
-}
+
 

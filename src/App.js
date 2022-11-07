@@ -11,6 +11,7 @@ import About from './pages/About';
 import Cartstorebutton from './components/layout/Cartstorebutton';
 import Contact from './pages/Contact';
 import Products from './pages/Products';
+import Login from './pages/Login';
 
 function App() {
   
@@ -28,6 +29,12 @@ function App() {
     <CartProvider>
       {cartIsShown && <Cart onClose={cartHideHandler}></Cart>} 
      <main>
+      <Route path="/" exact>
+        <Header onShow={cartShownHandler}></Header> 
+        <Music></Music>
+        <Cartstorebutton onClick={cartShownHandler}></Cartstorebutton>
+        <Footer></Footer>
+      </Route>
       <Route path="/home">
         <Home></Home>
       </Route>
@@ -42,6 +49,9 @@ function App() {
       </Route>
       <Route path="/contact">
         <Contact></Contact>
+      </Route>
+      <Route path="/login">
+        <Login></Login>
       </Route>
       <Route path="/product/:productId">
         <Products></Products>

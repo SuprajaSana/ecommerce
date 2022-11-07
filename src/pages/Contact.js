@@ -1,8 +1,6 @@
-
-import classes from './Contact.module.css';
-import Header from "../components/layout/Header";
 import Homefooter from "../components/layout/Homefooter";
 import Form from "./Form";
+import Aboutheader from "../components/layout/Aboutheader";
 
 const Contact=(props)=>
 {  
@@ -22,7 +20,7 @@ const Contact=(props)=>
    
     return(
         <div>
-         <Header></Header>
+         <Aboutheader></Aboutheader>
          <div>
         <Form onAddUser={addDetailsHandler}></Form>
         </div>
