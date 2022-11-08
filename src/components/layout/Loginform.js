@@ -64,7 +64,7 @@ const LoginForm = () => {
       })
       .then((data) => {
         authCtx.login(data.idToken);
-        history.replace('/')
+        history.replace('/store')
       })
       .catch((err) => {
         throw new Error(err.message);

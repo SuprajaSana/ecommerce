@@ -1,15 +1,15 @@
 import LoginForm from "../components/layout/Loginform";
-import Aboutheader from "../components/layout/Aboutheader";
+import LoginHeader from "../components/layout/LoginHeader";
 import Homefooter from "../components/layout/Homefooter";
 
 const Login=()=>
 {
-    return(
+    return(    
     <div>
-      <Aboutheader></Aboutheader>  
+      <LoginHeader></LoginHeader>
       <LoginForm></LoginForm>
       <Homefooter></Homefooter>
-      </div>
+    </div>
     )
 }
 
