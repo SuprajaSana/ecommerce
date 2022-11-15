@@ -5,11 +5,10 @@ import classes from "./LoginForm.module.css";
 import AuthContext from "../../store/auth-context";
 
 const LoginForm = () => {
-
   const emailInputRef = useRef("");
   const passwordInputRef = useRef("");
 
-  const history=useHistory()
+  const history = useHistory();
 
   const [isLogin, setIsLogin] = useState(true);
   const [isSendingRequest, setSendingRequest] = useState(false);
@@ -63,12 +62,14 @@ const LoginForm = () => {
         }
       })
       .then((data) => {
-        authCtx.login(data.idToken);
-        history.replace('/store')
+        authCtx.login(data.email);
+        //authCtx.login(data.idToken);
+        history.replace("/store");
       })
       .catch((err) => {
         throw new Error(err.message);
       });
+    
   };
 
   return (

@@ -1,43 +1,51 @@
 import React from "react";
 import { useState } from "react";
 
-const AuthContext=React.createContext({
-    token:'',
-    isLoggedIn:false,
-    login:(token)=>{},
-    logout:()=>{}
+const AuthContext = React.createContext({
+  //token: "",
+  email: "",
+  isLoggedIn: false,
+  login: (token) => {},
+  logout: () => {},
 });
 
-export const AuthContextProvider=(props)=>
-{
-   const initialToken=localStorage.getItem('token')
+export const AuthContextProvider = (props) => {
+  //const initialToken = localStorage.getItem("token");
+  const initialEmail = localStorage.getItem("email");
 
-   const [isToken,setToken]=useState(initialToken)
+  //const [isToken, setToken] = useState(initialToken);
+  const [isEmail, setEmail] = useState(initialEmail);
 
-   const userIsLoggedIn=!!isToken;
+    const userIsLoggedIn = !!isEmail;
+    //const userIsLogged = !!isEmail;
 
-   const loginHandler=(isToken)=>{
-    setToken(isToken)
-    localStorage.setItem('token',isToken)
-   }
+  const loginHandler = (isEmail) => {
+    //setToken(isToken);
+    setEmail(isEmail);
+    //localStorage.setItem("token", isToken);
+    localStorage.setItem("email", isEmail);
+  };
 
-   const logoutHandler=()=>
-   {
-    setToken(null)
-    localStorage.removeItem('token')
-   }
+  const logoutHandler = () => {
+    //setToken(null);
+      setEmail(null)
+    //localStorage.removeItem("token");
+      localStorage.removeItem("email")
+  };
 
-   const context={
-    token:isToken,
-    isLoggedIn:userIsLoggedIn,
-    login:loginHandler,
-    logout:logoutHandler
-   }
+  const context = {
+    //token: isToken,
+    email: isEmail,
+    isLoggedIn: userIsLoggedIn,
+    login: loginHandler,
+    logout: logoutHandler,
+  };
 
-    return(
-    <AuthContext.Provider value={context}>{props.children}</AuthContext.Provider>
-    )
-}
+  return (
+    <AuthContext.Provider value={context}>
+      {props.children}
+    </AuthContext.Provider>
+  );
+};
 
 export default AuthContext;
-

@@ -1,5 +1,6 @@
 import { useState, useContext } from "react";
 import { Redirect, Route } from "react-router-dom";
+import axios from 'axios';
 
 import Header from "./components/layout/Header";
 import Music from "./components/layout/Music";
@@ -13,6 +14,7 @@ import Contact from "./pages/Contact";
 import Products from "./pages/Products";
 import Login from "./pages/Login";
 import AuthContext from "./store/auth-context";
+import CartContext from "./store/Cart-Context";
 
 function App() {
   const authCtx = useContext(AuthContext);
@@ -21,7 +23,8 @@ function App() {
 
   const cartShownHandler = () => {
     setCartIsShown(true);
-  };
+}
+
   const cartHideHandler = () => {
     setCartIsShown(false);
   };
