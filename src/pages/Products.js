@@ -1,6 +1,6 @@
-import HighlightProducts from "./HighlightProducts";
-
 import { useParams } from "react-router-dom";
+
+import HighlightProducts from "./HighlightProducts";
 import Aboutheader from "../components/layout/Aboutheader";
 import Homefooter from "../components/layout/Homefooter";
 

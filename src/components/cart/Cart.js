@@ -1,5 +1,5 @@
-import { useContext, useState,useEffect } from "react";
-import axios from 'axios';
+import { useContext, useState, useEffect, useCallback } from "react";
+import axios from "axios";
 
 import Modal from "./Modal";
 import classes from "./Cart.module.css";
@@ -26,21 +26,22 @@ import AuthContext from "../../store/auth-context";
         quantity: 1,
 }] */
 const Cart = (props) => {
-
   const cartCtx = useContext(CartContext);
   const authCtx = useContext(AuthContext);
 
- //const totalAmount = cartCtx.totalAmount.toFixed(2);
+  const [res, setResponse] = useState([]);
 
-  const [res, setResponse] = useState([])
-  const [amount,setAmount]=useState()
+  // const [purchaseChange, setPurchase] = useState(false);
 
-  const [purchaseChange, setPurchase] = useState(false);
- 
-  const totalAmount = cartCtx.totalAmount.toFixed(2);
- 
+  let totalAmount;
+  if (cartCtx.items) {
+    totalAmount = cartCtx.items.reduce((currAmount, item) => {
+      return currAmount + item.price * item.quantity;
+    }, 0);
+  }
+
   const purchaseChangeHandler = () => {
-    setPurchase(true);
+    // setPurchase(true);
     if (cartCtx.items.length > 0) {
       alert("Thanks for purchase");
     } else {
@@ -52,44 +53,46 @@ const Cart = (props) => {
     cartCtx.removeItems(id);
   };
 
-
   const user = authCtx.email;
-  const userEmail = user.replace('@', '')
-  const newUser = userEmail.replace('.', '')
+  const userEmail = user.replace("@", "");
+  const newUser = userEmail.replace(".", "");
 
-  useEffect(() => {
-    getItems()
-  }, [])  
-    
-  const getItems = () => {
-    axios.get(`https://crudcrud.com/api/aafb1c706f80465b8635ee5bbda67227/login${newUser}`)
+  const getItems = useCallback(() => {
+    axios
+      .get(
+        `https://crudcrud.com/api/1585dc3c5b5c4c5cb0f91cd9bd7136ef/login${newUser}`
+      )
       .then((response) => {
-        setResponse(response.data)
+        setResponse(response.data);
       })
       .catch((err) => {
-        console.log(err)
-      })
-  } 
+        console.log(err);
+      });
+  }, [newUser]);
 
-  const cartItems =res.map((items) => {
-      return (
-        <div key={items.id}>
-          {" "}
-          <div className={classes.main}>
-            <img className={classes.image} src={items.item.imageUrl} alt=""></img>{" "}
-            <span className={classes.title}>{items.item.title}</span>{" "}
-          </div>{" "}
-          <span className={classes.price}>PRICE - {items.item.price}</span>{" "}
-          <span className={classes.quantity}>{items.quantity}</span>
-          <button
-            className={classes.rembutton}
-            onClick={removeHandler.bind(null, items.item.id)}
-          >
-            REMOVE
-          </button>
-        </div>
-      );
-    });  
+  useEffect(() => {
+    getItems();
+  }, [getItems]);
+
+  const cartItems = res.map((items) => {
+    return (
+      <div key={items.id}>
+        {" "}
+        <div className={classes.main}>
+          <img className={classes.image} src={items.imageUrl} alt=""></img>{" "}
+          <span className={classes.title}>{items.title}</span>{" "}
+        </div>{" "}
+        <span className={classes.price}>PRICE - {items.price}</span>{" "}
+        <span className={classes.quantity}>{items.quantity}</span>
+        <button
+          className={classes.rembutton}
+          onClick={removeHandler.bind(null, items.id)}
+        >
+          REMOVE
+        </button>
+      </div>
+    );
+  });
 
   return (
     <Modal>

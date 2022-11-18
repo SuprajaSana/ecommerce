@@ -17,7 +17,6 @@ const Form = (props) => {
     };
 
     props.onAddUser(details);
-
   }
   return (
     <form onSubmit={submitHandler}>

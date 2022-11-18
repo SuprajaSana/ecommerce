@@ -6,9 +6,12 @@ import CartContext from "../../store/Cart-Context";
 const CartButton = (props) => {
   const cartCtx = useContext(CartContext);
 
-  const numberOfItems = cartCtx.items.reduce((currNumber, item) => {
-    return currNumber + item.quantity;
-  }, 0);
+  let numberOfItems;
+  if (cartCtx.items) {
+    numberOfItems = cartCtx.items.reduce((currNumber, item) => {
+      return currNumber + item.quantity;
+    }, 0);
+  }
 
   return (
     <Fragment>

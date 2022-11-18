@@ -1,10 +1,8 @@
 import { Fragment, useContext } from "react";
+import { Link } from "react-router-dom";
 
 import classes from "./MusicItems.module.css";
 import CartContext from "../../store/Cart-Context";
-import { Link } from "react-router-dom";  
-import AuthContext from "../../store/auth-context";
-import axios from "axios";
 
 const productsArr = [
   {
@@ -33,36 +31,15 @@ const productsArr = [
   },
 ];
 const MusicItems = (props) => {
-
   const cartCtx = useContext(CartContext);
-  const authCtx = useContext(AuthContext);
-
-  const submitHandler = (event) => {
-    event.preventDefault();
-  };
-
-  const token = authCtx.token;
-  const email = authCtx.email;
-  const userEmail = email.replace('@', '')
-  const newUser = userEmail.replace('.', '')
-
 
   const addHandler = (item) => {
-    cartCtx.addItems({ ...item, quantity: 1 })
-
-    axios.post(
-      `https://crudcrud.com/api/aafb1c706f80465b8635ee5bbda67227/login${newUser}`, { item,quantity:1 })
-    .then((response) => {
-      console.log(response.data)
-    })
-    .catch((err) => {
-      console.log(err);
-    });
+    cartCtx.addItems({ ...item, quantity: 1 });
   };
 
   const productsItems = productsArr.map((item) => {
     return (
-      <div onSubmit={submitHandler} key={item.id}>
+      <div key={item.id}>
         <span className={classes.title}>{item.title}</span>{" "}
         <Link to={`/product/${item.id}`}>
           <img className={classes.items} src={item.imageUrl} alt=""></img>

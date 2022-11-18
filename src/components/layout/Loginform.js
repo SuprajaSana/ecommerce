@@ -69,7 +69,6 @@ const LoginForm = () => {
       .catch((err) => {
         throw new Error(err.message);
       });
-    
   };
 
   return (
